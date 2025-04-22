@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction au 3DML : Un Pionnier du Web 3D</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .presentation-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background-color: #212121;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #76a7d8;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin: 20px 0 15px;
+            font-size: 1.6em;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgb(102, 128, 110);
+            color: #042710;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: right;
+            font-style: italic;
+            color: #7f8c8d;
+            padding-top: 20px;
+            border-top: 1px dashed #bdc3c7;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 5px;
+            left: 40px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .checkbox-item input {
+            margin-right: 10px;
+        }
+
+        .comparison-table {
+            margin: 20px 0;
+            color: black;
+        }
+
+        .highlight {
+            background-color: rgb(102, 128, 110);
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+
+        .highlight h2 {
+            color: #042710;
+        }
+        #slide1 , #slide4 , #slide8 {
+            display: flex;
+            gap: 20px;
+            height: 600px;
+            margin-top: 20px;
+        }
+
+        .slide-content {
+            display: flex;
+            gap: 20px;
+            height: 600px;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            flex: 0 0 40%;
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text-content {
+            flex: 0 0 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Caractéristiques et fonctionnalités - deux colonnes */
+        #slide2 .split-columns,
+        #slide4 .split-columns {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        #slide2 .split-columns>div,
+        #slide4 .split-columns>div {
+            flex: 1;
+        }
+
+        #slide2 .split-columns h2,
+        #slide4 .split-columns h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Conclusion – chiffres au-dessus des titres/paragraphe */
+        .numbered-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .numbered-item {
+            background-color: #3498db;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .numbered-section {
+            flex: 1;
+            max-width: 200px;
+        }
+
+
+        .numbered-item+div {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* #slide1 {
+            display: flex;
+            flex-direction: row;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="presentation-container">
+        <!-- Page 1 -->
+
+        <div class="slide" id="slide1">
+            <div class="slide-content">
+                <div class="image-container">
+                    <img src="images/pRKBTsgi4ZzwvNpnKlo7F.jpg" alt="tech">
+                </div>
+                <div class="text-content">
+                    <h1>Introduction au 3DML :<br>Un Pionnier du Web 3D</h1>
+                    <p>Cette présentation explorera le 3DML, un langage de balisage 3D des années 1990.</p>
+                    <p>Nous examinerons son rôle pionnier et son influence sur les technologies web 3D modernes.</p>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="presenter">
+                        <label for="presenter">par Groupe F</label>
+                    </div>
+                </div>
+            </div>
+            <div class="page-number">Page 1</div>
+        </div>
+    </div>
+
+
+    <!-- Page 2 -->
+    <div class="slide" id="slide2">
+        <h1>Qu'est-ce que le 3DML ?</h1>
+        <div class="split-columns">
+            <div>
+                <h2>Définition</h2>
+                <p>3DML est un langage pour structurer les scènes 3D, similaire à HTML.</p>
+                <p>Il se base sur des balises et attributs pour définir des objets et leurs propriétés.</p>
+            </div>
+            <div>
+                <h2>Fonctionnalités</h2>
+                <ul>
+                    <li>Géométrie</li>
+                    <li>Textures</li>
+                    <li>Animations</li>
+                    <li>Interactions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-number">Page 2</div>
+    </div>
+    
+
+    <!-- Page 3 -->
+    <div class="slide" id="slide3">
+        <div class="slide-content">
+            <div class="image-container">
+                <img src="images/9W0--BgB3GFv78uCEVbSA.jpg" alt="architecture 3DML">
+            </div>
+            <div class="text-content">
+                <h1>L'Architecture du 3DML</h1>
+
+                <h2>Hiérarchie</h2>
+                <p>Le 3DML organise les objets 3D de manière hiérarchique.</p>
+
+                <h2>Modèle objet</h2>
+                <p>Il décrit les objets, les matériaux et les sources de lumière.</p>
+
+                <h2>Graphes de scène</h2>
+                <p>Il gère les relations entre objets et leurs transformations.</p>
+
+                <p>Cette architecture permet de structurer des scènes complexes en définissant les relations entre les
+                    objets.</p>
+            </div>
+        </div>
+        <div class="page-number">Page 3</div>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="slide" id="slide4">
+        <h1>Avantages et Limitations du 3DML</h1>
+        <div class="split-columns">
+            <div>
+                <h2>Avantages</h2>
+                <ul>
+                    <li>Facile à utiliser</li>
+                    <li>Structure claire</li>
+                    <li>Lisible</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Limitations</h2>
+                <ul>
+                    <li>Performances limitées</li>
+                    <li>Dépendance à un plugin</li>
+                    <li>Support restreint</li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top: 20px;">Malgré sa simplicité, le 3DML souffrait de performances et de compatibilité limitées.</p>
+        <div class="page-number">Page 4</div>
+    </div>
+    
+
+    <!-- Page 5 -->
+    <div class="slide" id="slide5">
+        <div class="slide-content">
+            <div class="image-container">
+                <img src="images/P0HwC5ZtrFbqCa3WYyUCQ.jpg" alt="3DML">
+            </div>
+            <div class="text-content">
+                <h1>Le Déclin du 3DML</h1>
+
+                <h2>Technologies Web</h2>
+                <p>Évolution de JavaScript et WebGL</p>
+
+                <h2>Manque de support</h2>
+                <p>Absence de mises à jour</p>
+
+                <h2>Concurrence</h2>
+                <p>VRML et X3D ont pris le dessus</p>
+
+                <p>Plusieurs facteurs ont contribué au déclin du 3DML, dont l'essor de nouvelles technologies.</p>
+
+            </div>
+        </div>
+        <div class="page-number">Page 5</div>
+    </div>
+
+    <!-- Page 6 -->
+    <div class="slide" id="slide6">
+        <div class="slide-content">
+            <div class="text-content">
+                <h1>Transition vers les Technologies Modernes</h1>
+
+                <div class="highlight">
+                    <h2>WebGL</h2>
+                    <p>Un tournant pour le web 3D</p>
+                </div>
+
+                <div class="highlight">
+                    <h2>JavaScript</h2>
+                    <p>Interactivité et dynamisme</p>
+                </div>
+
+                <div class="highlight">
+                    <h2>A-Frame</h2>
+                    <p>Three.js et Babylon.js</p>
+                </div>
+
+                <p>Le WebGL et JavaScript ont permis des graphismes 3D plus performants et interactifs.</p>
+            </div>
+            <div class="image-container">
+                <img src="images/FCTF9Oo7zKqgczr8x_Dij.jpg" alt="Modernité">
+            </div>
+        </div>
+        <div class="page-number">Page 6</div>
+    </div>
+
+
+    <!-- Page 7 -->
+    <div class="slide" id="slide7">
+        <h1>Comparaison : 3DML vs. A-Frame</h1>
+
+        <table class="comparison-table">
+            <tr>
+                <th>Syntaxe</th>
+                <th>Performances</th>
+                <th>Communauté</th>
+                <th>Flexibilité</th>
+            </tr>
+            <tr>
+                <td>A-Frame est plus simple et lisible.</td>
+                <td>WebGL offre de meilleures performances.</td>
+                <td>A-Frame a une communauté active.</td>
+                <td>A-Frame est plus flexible.</td>
+            </tr>
+        </table>
+
+        <p>A-Frame offre des avantages significatifs par rapport au 3DML en termes de syntaxe et de performances.</p>
+
+        <div class="page-number">Page 7</div>
+    </div>
+
+    <!-- Page 8 -->
+    <div class="slide" id="slide8">
+        <h1>Conclusion : L'Héritage du 3DML</h1>
+        <div class="numbered-list">
+            <div class="numbered-section">
+                <div class="numbered-item">1</div>
+                <h2>Inspiration</h2>
+                <p>Le 3DML a posé les bases.</p>
+            </div>
+            <div class="numbered-section">
+                <div class="numbered-item">2</div>
+                <h2>Évolution</h2>
+                <p>Applications actuelles et futures.</p>
+            </div>
+            <div class="numbered-section">
+                <div class="numbered-item">3</div>
+                <h2>Innovation</h2>
+                <p>Innovation et accessibilité.</p>
+            </div>
+        </div>
+        <p>Le 3DML a inspiré les technologies web 3D modernes, ouvrant la voie au métavers et à la réalité augmentée.</p>
+        <div class="page-number">Page 8</div>
+    </div>
+
+    <div class="navigation">
+        <button id="prevBtn" disabled>Précédent</button>
+        <button id="nextBtn">Suivant</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = i === index ? 'flex' : 'none';
+                });
+
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === slides.length - 1;
+            }
+
+            prevBtn.addEventListener('click', function () {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                    window.scrollTo(0, 0);
+                }
+            });
+
+            nextBtn.addEventListener('click', function () {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                    window.scrollTo(0, 0);
+                }
+            });
+
+            // Show first slide initially
+            showSlide(0);
+        });
+    </script>
+</body>
+
+</html>
