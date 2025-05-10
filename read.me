@@ -1,0 +1,178 @@
+🖥️ Slide 1 – Introduction : Pourquoi une veille sur PHP ?
+PHP reste l'un des langages les plus utilisés pour le développement web, notamment avec des CMS comme WordPress, Drupal et Joomla.
+
+
+Les versions récentes (8.1, 8.2, 8.3) apportent des améliorations significatives en termes de performances, de sécurité et de fonctionnalités.
+
+
+Objectif : comprendre les évolutions majeures pour anticiper les migrations et adapter les bonnes pratiques de développement.
+
+
+
+🆕 Slide 2 – PHP 8.1 : Nouvelles fonctionnalités et date de sortie
+Date de sortie : 25 novembre 2021.
+
+
+Nouvelles fonctionnalités :
+
+
+Enums : introduction des types énumérés pour une meilleure gestion des constantes.
+
+
+Propriétés en lecture seule (readonly) : permettent de définir des propriétés immuables après initialisation.
+
+
+Fibers : facilitent la gestion des tâches asynchrones.
+
+
+Types d'intersection : permettent de spécifier qu'une valeur doit satisfaire plusieurs types à la fois.
+
+
+Syntaxe des appels de fonctions de première classe : améliore la lisibilité et la flexibilité du code.
+
+
+Améliorations de performance :
+
+
+Cache d'héritage (inheritance cache) : améliore les performances en réduisant le temps de résolution des classes.
+
+
+Fin du support actif : 25 novembre 2023.
+
+
+Fin du support de sécurité : 31 décembre 2025.
+
+
+Dernière version de sécurité : 8.1.32 (13 mars 2025).
+
+
+
+🚀 Slide 3 – PHP 8.2 : Améliorations et nouveautés
+Date de sortie : 8 décembre 2022.
+
+
+Nouvelles fonctionnalités :
+
+
+Classes en lecture seule : toutes les propriétés d'une classe peuvent être déclarées readonly.
+
+
+Types null, false et true autonomes : permettent une meilleure précision dans les déclarations de types.
+
+
+Dépréciation des propriétés dynamiques : encourage une définition explicite des propriétés pour une meilleure robustesse du code.
+
+
+Extension random : nouveau générateur de nombres aléatoires plus sécurisé et performant.
+
+
+Redaction des paramètres sensibles : améliore la sécurité en masquant les informations sensibles dans les traces d'erreur.
+
+
+Fin du support actif : 31 décembre 2024.
+
+
+Fin du support de sécurité : 31 décembre 2026.
+
+
+Dernière version de sécurité : 8.2.28 (13 mars 2025).
+
+
+
+🔧 Slide 4 – PHP 8.3 : Changements clés
+Date de sortie : 23 novembre 2023.
+
+
+Nouvelles fonctionnalités :
+
+
+Constantes de classe typées : possibilité de définir le type des constantes de classe.
+
+
+Accès dynamique aux constantes de classe et aux membres d'énumérations : améliore la flexibilité du code.
+
+
+Fonction json_validate() : permet de valider une chaîne JSON sans la décoder.
+
+
+Améliorations de l'extension random : ajout de nouvelles fonctionnalités pour la génération de nombres aléatoires.
+
+
+Fonctions str_increment() et str_decrement() : facilitent les opérations sur les chaînes de caractères.
+
+
+Détection des dépassements de pile : améliore la stabilité du langage.
+
+
+Fin du support actif : 31 décembre 2025.
+
+
+Fin du support de sécurité : 31 décembre 2027.
+
+
+Dernière version de sécurité : 8.3.21 (8 mai 2025).
+
+
+
+⚠️ Slide 5 – Dépréciations et changements à venir
+Dépréciation de mb_strimwidth() avec des largeurs négatives.
+
+
+Suppression de constantes liées à crypt() : nettoyage des fonctionnalités obsolètes.
+
+
+Dépréciation de MT_RAND_PHP : encourage l'utilisation de générateurs de nombres aléatoires plus modernes.
+
+
+Migration des ressources vers des objets : transition progressive vers une architecture orientée objet plus cohérente.
+
+
+
+🧪 Slide 6 – RFCs marquants et évolutions futures
+RFC sur les constantes de classe typées : renforce la sécurité des types.
+
+
+RFC sur l'accès dynamique aux constantes : améliore la flexibilité du langage.
+
+
+RFC sur json_validate() : introduit une méthode efficace pour valider les chaînes JSON.
+
+
+RFC sur les dépréciations en PHP 8.3 : planifie les suppressions pour PHP 9, encourageant une migration anticipée.
+
+
+
+🔐 Slide 7 – Mises à jour de sécurité récentes
+PHP 8.1.30 : mise à jour de sécurité publiée le 19 octobre 2023.
+
+
+PHP 8.2.24 : mise à jour de sécurité publiée le 26 octobre 2023.
+
+
+PHP 8.3.14 : mise à jour de sécurité publiée le 23 novembre 2023.
+
+
+Vulnérabilités corrigées :
+
+
+CVE-2024-11235 : vulnérabilité critique affectant les versions 8.3.* avant 8.3.19 et 8.4.* avant 8.4.5.
+
+
+CVE-2024-4577 : vulnérabilité affectant certaines configurations non standard des pages de code Windows, corrigée dans les versions 8.1.30, 8.2.24 et 8.3.12.
+
+
+
+✅ Slide 8 – Conclusion et recommandations
+PHP 8.3 marque une étape importante dans l'évolution du langage, avec des améliorations significatives en termes de performances, de sécurité et de fonctionnalités.
+
+
+Recommandations :
+
+
+Tester les applications existantes avec les nouvelles versions de PHP dans un environnement de développement avant de les déployer en production.
+
+
+Mettre à jour régulièrement les dépendances et les bibliothèques pour assurer la compatibilité.
+
+
+Surveiller les RFCs en cours pour anticiper les changements futurs et adapter les pratiques de développement en conséquence.

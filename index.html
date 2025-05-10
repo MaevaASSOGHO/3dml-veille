@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: black;
+            background-color: #212121;
             color: white;
             display: flex;
             flex-direction: column;
@@ -31,25 +31,30 @@
         .slide {
             background-color: #212121;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgb(177, 101, 39);
             padding: 40px;
-            margin-bottom: 30px;
+            padding-bottom: 60px;
+            margin-bottom: 20px;
             position: relative;
-            min-height: 500px;
+            min-height: 600px;
             display: flex;
             flex-direction: column;
+            overflow-y: auto;
         }
 
         h1 {
-            color: #76a7d8;
+            color: rgb(177, 101, 39);
             margin-bottom: 20px;
             font-size: 2.2em;
-            border-bottom: 2px solid #3498db;
+            border-bottom: 2px solid rgb(165, 109, 63);
             padding-bottom: 10px;
+        }
+        strong {
+            color: rgb(17, 153, 47);
         }
 
         h2 {
-            color: #2980b9;
+            color: #76a7d8; 
             margin: 20px 0 15px;
             font-size: 1.6em;
         }
@@ -170,6 +175,10 @@
             margin-top: 20px;
         }
 
+        #slide4 {
+            min-height: 700px; /* Hauteur encore plus grande pour cette slide */
+        }
+
         .slide-content {
             display: flex;
             gap: 20px;
@@ -206,6 +215,11 @@
             margin-top: 20px;
         }
 
+        #slide4 .split-columns {
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
         #slide2 .split-columns>div,
         #slide4 .split-columns>div {
             flex: 1;
@@ -216,6 +230,20 @@
             margin-bottom: 10px;
         }
 
+        #slide4 ul {
+            margin-left: 20px; /* Réduction de la marge des listes */
+        }
+
+        #slide4 li {
+            margin-bottom: 6px; /* Réduction de l'espace entre éléments de liste */
+            font-size: 0.95em; /* Légère réduction de la taille de police */
+            line-height: 1.4; /* Ajustement de l'interligne */
+        }
+
+        #slide4 p {
+            margin-bottom: 10px; /* Réduction de l'espace après les paragraphes */
+            font-size: 0.95em; /* Légère réduction de la taille de police */
+        }
         /* Conclusion – chiffres au-dessus des titres/paragraphe */
         .numbered-list {
             display: flex;
@@ -265,12 +293,15 @@
         <div class="slide" id="slide1">
             <div class="slide-content">
                 <div class="image-container">
-                    <img src="images/pRKBTsgi4ZzwvNpnKlo7F.jpg" alt="tech">
+                    <img src="images/img1.webp" alt="tech">
                 </div>
                 <div class="text-content">
-                    <h1>Introduction au 3DML :<br>Un Pionnier du Web 3D</h1>
-                    <p>Cette présentation explorera le 3DML, un langage de balisage 3D des années 1990.</p>
-                    <p>Nous examinerons son rôle pionnier et son influence sur les technologies web 3D modernes.</p>
+                    <h1>Introduction :<br>Pourquoi une veille sur PHP ?</h1>
+                    <p>PHP reste l'un des langages les plus utilisés pour le développement web, notamment avec des CMS comme WordPress, Drupal et Joomla. </p>
+                    <ul>
+                    <li>Les versions récentes (8.1, 8.2, 8.3) apportent des améliorations significatives en termes de performances, de sécurité et de fonctionnalités.</li>
+                    <li> Objectif : comprendre les évolutions majeures pour anticiper les migrations et adapter les bonnes pratiques de développement.</li>
+                    </ul>
                     <div class="checkbox-item">
                         <input type="checkbox" id="presenter">
                         <label for="presenter">par Groupe F</label>
@@ -284,20 +315,27 @@
 
     <!-- Page 2 -->
     <div class="slide" id="slide2">
-        <h1>Qu'est-ce que le 3DML ?</h1>
+        <h1>PHP 8.1 : Nouvelles fonctionnalités :</h1>
+        <p><strong>Date de sortie :</strong> 25 novembre 2021.</p>
         <div class="split-columns">
             <div>
-                <h2>Définition</h2>
-                <p>3DML est un langage pour structurer les scènes 3D, similaire à HTML.</p>
-                <p>Il se base sur des balises et attributs pour définir des objets et leurs propriétés.</p>
+                <h2>Nouvelles fonctionnalités :</h2>
+                <ul>
+                    <li>Enums : introduction des types énumérés pour une meilleure gestion des constantes</li>
+                    <li> Propriétés en lecture seule <strong>(readonly)</strong> : permettent de définir des propriétés immuables après initialisation.</li>
+                    <li>Fibers : facilitent la gestion des tâches asynchrones.</li>
+                    <li>Types d'intersection : permettent de spécifier qu'une valeur doit satisfaire plusieurs types à la fois.</li>
+                    <li>Syntaxe des appels de fonctions de première classe : améliore la lisibilité et la flexibilité du code.
+                    </li>
+                </ul>         
             </div>
             <div>
-                <h2>Fonctionnalités</h2>
+                <h2>Améliorations de performance :</h2>
                 <ul>
-                    <li>Géométrie</li>
-                    <li>Textures</li>
-                    <li>Animations</li>
-                    <li>Interactions</li>
+                    <li>Cache d'héritage <strong>(inheritance cache)</strong> : améliore les performances en réduisant le temps de résolution des classes.</li>
+                    <p>Fin du <strong>support actif :</strong>25 novembre 2023.</p>
+                    <p>Fin du <strong>support de sécurité :</strong>31 décembre 2025.</p>
+                    <p>Dernière version de sécurité : 8.1.32 (<strong>13 mars 2025</strong>).</p>
                 </ul>
             </div>
         </div>
@@ -307,24 +345,27 @@
 
     <!-- Page 3 -->
     <div class="slide" id="slide3">
-        <div class="slide-content">
-            <div class="image-container">
-                <img src="images/9W0--BgB3GFv78uCEVbSA.jpg" alt="architecture 3DML">
+        <h1>PHP 8.2 : Améliorations et nouveautés</h1>
+        <p><strong>Date de sortie :</strong> 8 décembre 2022.</p>
+        <div class="split-columns">
+            <div>
+                <h2>Nouvelles fonctionnalités :</h2>
+                <ul>
+                    <li>Classes en lecture seule : toutes les propriétés d'une classe peuvent être déclarées <strong>readonly</strong>.</li>
+                    <li>Types <strong>null</strong>, <strong>false</strong> et <strong>true</strong> autonomes : permettent une meilleure précision dans les déclarations de types.</li>
+                    <li>Dépréciation des propriétés dynamiques : encourage une définition explicite des propriétés pour une meilleure robustesse du code.</li>
+                    <li>Extension <strong>random</strong> : nouveau générateur de nombres aléatoires plus sécurisé et performant.</li>
+                    <li>Rédaction des paramètres sensibles : améliore la sécurité en masquant les informations sensibles dans les traces d'erreur.</li>
+                </ul>         
             </div>
-            <div class="text-content">
-                <h1>L'Architecture du 3DML</h1>
-
-                <h2>Hiérarchie</h2>
-                <p>Le 3DML organise les objets 3D de manière hiérarchique.</p>
-
-                <h2>Modèle objet</h2>
-                <p>Il décrit les objets, les matériaux et les sources de lumière.</p>
-
-                <h2>Graphes de scène</h2>
-                <p>Il gère les relations entre objets et leurs transformations.</p>
-
-                <p>Cette architecture permet de structurer des scènes complexes en définissant les relations entre les
-                    objets.</p>
+            <div>
+                <h2>Finalités :</h2>
+                <ul>
+                    <li>Cache d'héritage <strong>(inheritance cache)</strong> : améliore les performances en réduisant le temps de résolution des classes.</li>
+                    <p>Fin du <strong>support actif :</strong>31 décembre 2024.</p>
+                    <p>Fin du <strong>support de sécurité :</strong>31 décembre 2026.</p>
+                    <p>Dernière version de sécurité : 8.2.28 (<strong>13 mars 2025</strong>).</p>
+                </ul>
             </div>
         </div>
         <div class="page-number">Page 3</div>
@@ -332,26 +373,34 @@
 
     <!-- Page 4 -->
     <div class="slide" id="slide4">
-        <h1>Avantages et Limitations du 3DML</h1>
+        <h1>PHP 8.3 : Changements clés</h1>
+        <p><strong>Date de sortie :</strong> 23 novembre 2023.</p>
         <div class="split-columns">
             <div>
-                <h2>Avantages</h2>
+                <h2>Nouvelles fonctionnalités :</h2>
                 <ul>
-                    <li>Facile à utiliser</li>
-                    <li>Structure claire</li>
-                    <li>Lisible</li>
-                </ul>
+                    <li>Constantes de classe typées : définition du type des constantes de classe.</li>
+                    <li>Types <strong>null</strong>, <strong>false</strong> autonomes : meilleure précision dans les déclarations.</li>
+                    <li>Dépréciation des propriétés dynamiques : robustesse du code.</li>
+                    <li>Extension <strong>random</strong> : générateur plus sécurisé et performant.</li>
+                    <li>Rédaction des paramètres sensibles : sécurité dans les traces d'erreur.</li>
+                </ul>         
             </div>
             <div>
-                <h2>Limitations</h2>
+                <h2>Finalités :</h2>
                 <ul>
-                    <li>Performances limitées</li>
-                    <li>Dépendance à un plugin</li>
-                    <li>Support restreint</li>
+                    <li>Cache d'héritage : performances améliorées.</li>
+                    <li>Accès dynamique aux constantes : flexibilité accrue.</li>
+                    <li><strong>json_validate()</strong>: validation JSON sans décodage.</li>
+                    <li>Améliorations de l'extension <strong>random</strong>.</li>
+                    <li><strong>str_increment()</strong> et <strong>str_decrement()</strong>.</li>
+                    <li>Détection des dépassements de pile : stabilité améliorée.</li>
                 </ul>
+                <p><strong>Support actif jusqu'au :</strong> 31/12/2025.</p>
+                <p><strong>Support sécurité jusqu'au :</strong> 31/12/2027.</p>
+                <p><strong>Dernière version :</strong> 8.3.21 (08/05/2025).</p>
             </div>
         </div>
-        <p style="margin-top: 20px;">Malgré sa simplicité, le 3DML souffrait de performances et de compatibilité limitées.</p>
         <div class="page-number">Page 4</div>
     </div>
     
@@ -360,22 +409,16 @@
     <div class="slide" id="slide5">
         <div class="slide-content">
             <div class="image-container">
-                <img src="images/P0HwC5ZtrFbqCa3WYyUCQ.jpg" alt="3DML">
+                <img src="images/img4.jpg" alt="3DML">
             </div>
             <div class="text-content">
-                <h1>Le Déclin du 3DML</h1>
-
-                <h2>Technologies Web</h2>
-                <p>Évolution de JavaScript et WebGL</p>
-
-                <h2>Manque de support</h2>
-                <p>Absence de mises à jour</p>
-
-                <h2>Concurrence</h2>
-                <p>VRML et X3D ont pris le dessus</p>
-
-                <p>Plusieurs facteurs ont contribué au déclin du 3DML, dont l'essor de nouvelles technologies.</p>
-
+                <h1>Dépréciations et changements à venir</h1>
+                <ul>
+                    <li>Dépréciation de <strong>mb_strimwidth()</strong> avec des largeurs négatives.</li>
+                    <li>Suppression de constantes liées à <strong>crypt()</strong> : nettoyage des fonctionnalités obsolètes.</li>
+                    <li>Dépréciation de <strong>MT_RAND_PHP</strong> : encourage l'utilisation de générateurs de nombres aléatoires plus modernes.</li>
+                    <li>Migration des ressources vers des objets : transition progressive vers une architecture orientée objet plus cohérente.</li>
+                </ul>
             </div>
         </div>
         <div class="page-number">Page 5</div>
@@ -385,27 +428,16 @@
     <div class="slide" id="slide6">
         <div class="slide-content">
             <div class="text-content">
-                <h1>Transition vers les Technologies Modernes</h1>
-
-                <div class="highlight">
-                    <h2>WebGL</h2>
-                    <p>Un tournant pour le web 3D</p>
-                </div>
-
-                <div class="highlight">
-                    <h2>JavaScript</h2>
-                    <p>Interactivité et dynamisme</p>
-                </div>
-
-                <div class="highlight">
-                    <h2>A-Frame</h2>
-                    <p>Three.js et Babylon.js</p>
-                </div>
-
-                <p>Le WebGL et JavaScript ont permis des graphismes 3D plus performants et interactifs.</p>
+                <h1>RFCs marquants et évolutions futures</h1>
+                <ul>
+                    <li>RFC sur les constantes de classe typées : renforce la sécurité des types.</li>
+                    <li>RFC sur l'accès dynamique aux constantes : améliore la flexibilité du langage.</li>
+                    <li>RFC sur <strong>json_validate()</strong> : introduit une méthode efficace pour valider les chaînes JSON.</li>
+                    <li>RFC sur les dépréciations en PHP 8.3 : planifie les suppressions pour PHP 9, encourageant une migration anticipée.</li>
+                </ul>
             </div>
             <div class="image-container">
-                <img src="images/FCTF9Oo7zKqgczr8x_Dij.jpg" alt="Modernité">
+                <img src="images/img5.png" alt="Modernité">
             </div>
         </div>
         <div class="page-number">Page 6</div>
@@ -414,49 +446,33 @@
 
     <!-- Page 7 -->
     <div class="slide" id="slide7">
-        <h1>Comparaison : 3DML vs. A-Frame</h1>
+        <h1>Mises à jour de sécurité récentes</h1>
 
-        <table class="comparison-table">
-            <tr>
-                <th>Syntaxe</th>
-                <th>Performances</th>
-                <th>Communauté</th>
-                <th>Flexibilité</th>
-            </tr>
-            <tr>
-                <td>A-Frame est plus simple et lisible.</td>
-                <td>WebGL offre de meilleures performances.</td>
-                <td>A-Frame a une communauté active.</td>
-                <td>A-Frame est plus flexible.</td>
-            </tr>
-        </table>
-
-        <p>A-Frame offre des avantages significatifs par rapport au 3DML en termes de syntaxe et de performances.</p>
-
+        <ul>
+            <li><strong>PHP 8.1.30 :</strong> mise à jour de sécurité publiée le <strong>19 octobre 2023</strong>.</li>
+            <li><strong>PHP 8.2.24 :</strong> mise à jour de sécurité publiée le <strong>26 octobre 2023</strong>.</li>
+            <li><strong>PHP 8.3.14 :</strong> mise à jour de sécurité publiée le <strong>23 novembre 2023</strong>.</li>
+        </ul>
+        <ul>
+            <li><strong>Vulnérabilités corrigées :</strong>
+                <ul>
+                    <li><strong>CVE-2024-11235 :</strong> vulnérabilité critique affectant les versions 8.3.* avant 8.3.19 et 8.4.* avant 8.4.5.</li>
+                    <li><strong>CVE-2024-4577 :</strong> vulnérabilité affectant certaines configurations non standard des pages de code Windows, corrigée dans les versions 8.1.30, 8.2.24 et 8.3.12.</li>
+                </ul>
+            </li>
+        </ul>
         <div class="page-number">Page 7</div>
     </div>
 
     <!-- Page 8 -->
     <div class="slide" id="slide8">
-        <h1>Conclusion : L'Héritage du 3DML</h1>
-        <div class="numbered-list">
-            <div class="numbered-section">
-                <div class="numbered-item">1</div>
-                <h2>Inspiration</h2>
-                <p>Le 3DML a posé les bases.</p>
-            </div>
-            <div class="numbered-section">
-                <div class="numbered-item">2</div>
-                <h2>Évolution</h2>
-                <p>Applications actuelles et futures.</p>
-            </div>
-            <div class="numbered-section">
-                <div class="numbered-item">3</div>
-                <h2>Innovation</h2>
-                <p>Innovation et accessibilité.</p>
-            </div>
-        </div>
-        <p>Le 3DML a inspiré les technologies web 3D modernes, ouvrant la voie au métavers et à la réalité augmentée.</p>
+        <h1>Conclusion et recommandations</h1>
+        <p>PHP 8.3 marque une étape importante dans l'évolution du langage, avec des améliorations significatives en termes de performances, de sécurité et de fonctionnalités.</p>
+        <ul><h2>Recommandations :</h2> 
+            <li>Tester les applications existantes avec les nouvelles versions de PHP dans un environnement de développement avant de les déployer en production.</li>
+            <li>Mettre à jour régulièrement les dépendances et les bibliothèques pour assurer la compatibilité.</li>
+            <li>Surveiller les RFCs en cours pour anticiper les changements futurs et adapter les pratiques de développement en conséquence.</li>
+        </ul>
         <div class="page-number">Page 8</div>
     </div>
 
@@ -504,3 +520,4 @@
 </body>
 
 </html>
+//#2980b9;//
